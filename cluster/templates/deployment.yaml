@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-cluster
+  labels:
+    app: cluster-config
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: cluster-config
+  template:
+    metadata:
+      labels:
+        app: cluster-config
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:alpine
+        ports:
+        - containerPort: 80
+      volumes:
+      - name: nginx-data
+        emptyDir: {}
+      volumeMounts:
+      - name: nginx-data
+        mountPath: /var/www/html

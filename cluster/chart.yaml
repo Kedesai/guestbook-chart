@@ -1,0 +1,4 @@
+apiVersion: v2
+name: cluster-config
+version: 0.1.0
+description: Helm chart for basic cluster configuration with Nginx deployment

@@ -1,0 +1,18 @@
+apiVersion: v2
+name: guestbook
+version: 0.1.0
+description: Helm chart for a guestbook application hosted on Nginx
+dependsOn:
+  - name: cluster-config
+    repository: ../cluster
+    version: 0.1.0
+maintainers:
+  - name: Your Name
+    email: ketandesai@yahoo.com
+    url: https://your-website.com
+sources:
+  - https://github.com/kedesai/guestbook-chart
+keywords:
+  - guestbook
+  - nginx
+license: MIT
